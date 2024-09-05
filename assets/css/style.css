@@ -1,0 +1,56 @@
+
+nav{
+    grid-area: nav;
+    background-color: azure;
+    text-align: center;
+}
+aside{
+    /* layout con flexbox */
+    background-color: blueviolet;
+    grid-area: aside;
+    display: flex;
+    flex-direction: column;
+}
+main{
+    /* layout con grid */
+    background-color: green;
+    grid-area: productos;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+}
+
+footer{
+    background-color: white;
+    grid-area: footer;
+    text-align: center;
+}
+
+body{
+    /* layout con grid */
+    margin: 0;
+    padding: 0;
+    background-color: aquamarine;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-areas: 
+        'nav nav'
+        'aside productos'
+        'footer footer';
+}
+article{
+    /* layout con flexbox */
+    background-color: orange;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+article img{
+    width:80%;
+    object-fit:cover;
+    overflow: hidden;
+}
+h5 span{
+    color:darkgray;
+}
