@@ -1,36 +1,62 @@
+:root {
+    --fuentes: #0B032D; /*Para letras*/
+    --contraste: #C1ABA6; /*Para contraste*/
+    --extremos: #A882DD; /*Para header y footer*/
+    --principal: #FFB997;  /*Principal*/
+    --secundario: #843B62; /*Secundario*/
 
+  }
 nav{
     grid-area: nav;
-    background-color: azure;
+    background-color: var(--secundario);
+    color: var(--contraste);
     text-align: center;
+    text-transform: uppercase;
 }
 aside{
     /* layout con flexbox */
-    background-color: blueviolet;
+    background-color: var(--extremos);
+    color: var(--fuentes);
     grid-area: aside;
     display: flex;
     flex-direction: column;
 }
+aside h3{
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-shadow: var(--contraste) 2px 2px;
+}
+aside h5:hover{
+    background-color: var(--principal);
+    cursor: pointer;
+    transition: 1s;
+}
+h5 span{
+    color:var(--secundario);
+}
 main{
     /* layout con grid */
-    background-color: green;
+    background-color: var(--extremos);
     grid-area: productos;
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 10px;
+    padding: 10px 10% 10% 10px;
 }
 
 footer{
-    background-color: white;
+    background-color: var(--secundario);
+    color: var(--contraste);
     grid-area: footer;
     text-align: center;
+    min-height: 5vh;
 }
 
 body{
     /* layout con grid */
     margin: 0;
     padding: 0;
-    background-color: aquamarine;
+    background-color: var(--principal);
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-areas: 
@@ -40,17 +66,47 @@ body{
 }
 article{
     /* layout con flexbox */
-    background-color: orange;
+    background-color: var(--extremos);
+    color: var(--fuentes);
+    font-style: oblique;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    border-style: groove; 
+    border-color: var(--secundario);
+    transition: 0.3s;
+}
+article:hover{
+    background-color: var(--principal);
+    border-color: var(--principal);
+    color: var(--secundario);
+}
 
+article h3{
+    text-transform: uppercase;
 }
 article img{
-    width:80%;
+    width:100%;
     object-fit:cover;
     overflow: hidden;
+    min-height: 400px;
 }
-h5 span{
-    color:darkgray;
+
+article button{
+    width: 100%;
+    background-color: var(--secundario);
+    color: var(--extremos);
+    border: 0px;
+    height: 4vh;
+    font-size: larger;
+    font-weight: 600;
+    transition: 0.3s;
+    
+}
+
+article button:hover{
+    background-color: var(--fuentes);
+    color: var(--principal);
+    cursor: pointer;
 }
